@@ -118,12 +118,13 @@
                     android:layout_height="wrap_content"
                     app:srcCompat="@mipmap/telefono_round" />
                 <ImageButton
-
+                    android:onClick="whats"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@mipmap/whatsapp_round" />
 
                 <ImageButton
+                    android:onClick="sms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
                     app:srcCompat="@mipmap/mensaje_round" />

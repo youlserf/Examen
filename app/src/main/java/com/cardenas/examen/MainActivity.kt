@@ -1,11 +1,15 @@
 package com.cardenas.examen
 
+import android.Manifest
 import android.content.Intent
-import androidx.appcompat.app.AppCompatActivity
+import android.content.pm.PackageManager
+import android.net.Uri
 import android.os.Bundle
 import android.view.View
-import android.widget.TextView
 import android.widget.Toast
+import androidx.appcompat.app.AppCompatActivity
+import androidx.core.app.ActivityCompat
+import androidx.core.content.ContextCompat
 import kotlinx.android.synthetic.main.activity_edit.*
 import kotlinx.android.synthetic.main.activity_main.*
 
@@ -55,5 +59,66 @@ class MainActivity : AppCompatActivity() {
         startActivity(intent)
     }
 
-    fun call(view: View) {}
+    fun call(view: View) {
+        val phone = valor_telefono.text.toString()
+        val call = Uri.parse("tel:"+phone)
+        if(ContextCompat.checkSelfPermission(this, Manifest.permission.CALL_PHONE) ==
+                PackageManager.PERMISSION_GRANTED){
+        val i = Intent(Intent.ACTION_CALL, call)
+        startActivity(i)
+        }
+        else{
+            Toast.makeText(this, "No hay permiso para realizar llamada",
+            Toast.LENGTH_LONG)
+            ActivityCompat.requestPermissions(
+                this,
+                arrayOf(Manifest.permission.CALL_PHONE),
+                123
+            )
+        }
+
+    }
+
+    fun whats(view: View) {
+        val message = valor_nombre.text.toString()
+        sendMessage(message);
+    }
+
+    fun sendMessage(message:String){
+
+        // Creating intent with action send
+        val intent = Intent(Intent.ACTION_SEND)
+
+        // Setting Intent type
+        intent.type = "text/plain"
+
+        // Setting whatsapp package name
+        intent.setPackage("com.whatsapp")
+
+        // Give your message here
+        intent.putExtra(Intent.EXTRA_TEXT, message)
+
+        // Checking whether whatsapp is installed or not
+        if (intent.resolveActivity(packageManager) == null) {
+            Toast.makeText(this,
+                "Please install whatsapp first.",
+                Toast.LENGTH_SHORT).show()
+            return
+        }
+
+        // Starting Whatsapp
+        startActivity(intent)
+    }
+
+    fun sms(view: View) {
+        val message = valor_nombre.text.toString()
+        val phone = valor_telefono.text.toString()
+        val call = Uri.parse("tel:"+phone)
+
+        val sendIntent = Intent(Intent.ACTION_VIEW)
+        sendIntent.type = "vnd.android-dir/mms-sms"
+        sendIntent.putExtra("address", call)
+        sendIntent.putExtra("sms_body", message)
+        startActivity(sendIntent)
+    }
 }
