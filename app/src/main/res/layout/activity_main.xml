@@ -1,0 +1,132 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:padding="10pt"
+    tools:context=".MainActivity">
+
+
+
+        <ImageView
+            android:id="@+id/imageView"
+            android:layout_width="374dp"
+            android:layout_height="207dp"
+            app:srcCompat="@drawable/ic_launcher_foreground" />
+
+        <TextView
+            android:id="@+id/nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginTop="10dp"
+            android:text="Nombre" />
+
+        <TextView
+            android:id="@+id/valor_nombre"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/imageView"
+            android:layout_marginStart="17dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/nombre"
+            android:text="Cardenas Huaringa Youlserf" />
+
+        <TextView
+            android:id="@+id/correo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/nombre"
+            android:layout_marginTop="10dp"
+            android:text="Correo:" />
+        <TextView
+            android:id="@+id/valor_correo"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/valor_nombre"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/correo"
+            android:text="example@gmail.com" />
+
+        <TextView
+            android:id="@+id/oficina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/correo"
+            android:layout_marginTop="10dp"
+            android:text="Oficina:" />
+
+        <TextView
+            android:id="@+id/valor_oficina"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/valor_correo"
+            android:layout_marginStart="23dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/oficina"
+            android:text="My house" />
+
+        <TextView
+            android:id="@+id/telefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/oficina"
+            android:layout_marginTop="10dp"
+            android:text="Telefono:" />
+
+        <TextView
+            android:id="@+id/valor_telefono"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/valor_oficina"
+            android:layout_marginStart="11dp"
+            android:layout_marginTop="10dp"
+            android:layout_toEndOf="@+id/telefono"
+            android:text="916832052" />
+
+
+        <Button
+            android:id="@+id/button_editar"
+            android:layout_width="99dp"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/valor_telefono"
+            android:layout_alignStart="@+id/valor_telefono"
+            android:layout_marginStart="150dp"
+            android:layout_marginTop="64dp"
+            android:onClick="editar_datos"
+            android:text="Editar" />
+
+        <GridLayout
+            android:id="@+id/grid"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_below="@+id/button_editar"
+            android:layout_alignParentStart="true"
+            android:layout_alignParentEnd="true"
+            android:layout_marginStart="5dp"
+            android:layout_marginEnd="5dp"
+            android:columnCount="3"
+            android:gravity="center"
+            android:padding="15dp"
+            android:rowCount="1">
+
+                <ImageButton
+                    android:onClick="call"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/telefono_round" />
+                <ImageButton
+
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/whatsapp_round" />
+
+                <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    app:srcCompat="@mipmap/mensaje_round" />
+
+        </GridLayout>
+</RelativeLayout>
