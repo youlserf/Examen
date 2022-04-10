@@ -12,7 +12,7 @@
             android:id="@+id/imageView"
             android:layout_width="369dp"
             android:layout_height="272dp"
-            app:srcCompat="@drawable/camsado" />
+            android:background="@drawable/camsado"/>
 
         <TextView
             android:id="@+id/nombre"
@@ -112,21 +112,24 @@
             android:rowCount="1">
 
                 <ImageButton
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
                     android:onClick="call"
+                    app:srcCompat="@mipmap/telefono_round"
+                    tools:ignore="SpeakableTextPresentCheck" />
+
+                <ImageButton
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/telefono_round" />
-                <ImageButton
                     android:onClick="whats"
-                    android:layout_width="wrap_content"
-                    android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/whatsapp_round" />
+                    app:srcCompat="@mipmap/wa_round"
+                    tools:ignore="SpeakableTextPresentCheck" />
 
                 <ImageButton
-                    android:onClick="sms"
                     android:layout_width="wrap_content"
                     android:layout_height="wrap_content"
-                    app:srcCompat="@mipmap/mensaje_round" />
-
+                    android:onClick="sms"
+                    app:srcCompat="@mipmap/mensaje_round"
+                    tools:ignore="SpeakableTextPresentCheck" />
         </GridLayout>
 </RelativeLayout>
