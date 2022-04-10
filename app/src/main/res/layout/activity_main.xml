@@ -8,12 +8,11 @@
     tools:context=".MainActivity">
 
 
-
         <ImageView
             android:id="@+id/imageView"
-            android:layout_width="374dp"
-            android:layout_height="207dp"
-            app:srcCompat="@drawable/ic_launcher_foreground" />
+            android:layout_width="369dp"
+            android:layout_height="272dp"
+            app:srcCompat="@drawable/camsado" />
 
         <TextView
             android:id="@+id/nombre"
